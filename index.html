@@ -18,19 +18,65 @@
     <main class="container mx-auto mt-8">
         <!-- search section: -->
         <section class="flex justify-end lg:p-4 m-4 bg-gray-100 gap-1 md:gap-2 lg:gap-4 items-center mx-5">
-            <input id="search-field" type="text" placeholder="search..." class="input input-bordered w-full max-w-xs focus:outline-none" />
+            <input id="search-field" type="text" placeholder="search..."
+                class="input input-bordered w-full max-w-xs focus:outline-none" />
             <button class="btn bg-sky-400 py-2" onclick="handleSearch()">Search</button>
+
+            <!-- another search field
+            <div class="flex justify-center items-center gap-2">
+                <input id="search-field2" type="text" placeholder="Search here"
+                    class="input input-bordered w-full max-w-xs focus:outline-none" />
+                <button onclick="handleSearch2()" class="btn btn-primary normal-case">Search</button>
+            </div> -->
         </section>
+
         <!-- search result  -->
-        
+
+
+
         <!-- card section  -->
-        <section>
+        <section class="text-center">
+            <!-- loader or spinner -->
+            <div id="loading-spinner" class="my-40 hidden">
+                <span class="loading loading-dots loading-lg text-primary"></span>
+            </div>
+
+            <h4 id="no-data-found" class="p-5 text-3xl text-center font-bold hidden">No data found</h4>
             <!-- card container  -->
             <div id="phone-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-6 ">
 
 
             </div>
+
+            <!-- show all  -->
+            <div id="show-all-container" class="hidden mt-6">
+                <button onclick="handleShowAll()" class="btn btn-accent">Show all</button>
+            </div>
         </section>
+
+        <!-- show details modal -->
+        <!-- Open the modal using ID.showModal() method -->
+        <dialog id="show_details_modal" class="modal modal-bottom sm:modal-middle">
+            <div class="modal-box">
+                <h3 id="show-details-phone-name" class="font-bold text-3xl"></h3>
+                <div id="show-details-container">
+
+                </div>
+                <!-- review container -->
+                    <h4 class="text-xl font-bold">Reviews</h4>
+                 <div id="reviews-container" class="p-5">
+                   
+
+                 </div>
+            
+                <div class="modal-action">
+                    <form method="dialog">
+                        <!-- if there is a button in form, it will close the modal -->
+                        <button class="btn">Close</button>
+                    </form>
+                </div>
+            </div>
+        </dialog>
 
     </main>
     <footer>
